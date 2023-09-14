@@ -19,17 +19,19 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 public class Base {
 
 	public WebDriver driver;
-	public String url;
+	public ReadConfig readConfig;
 
 	public WebDriver initializeDriver() throws IOException {
+		
+		readConfig = new ReadConfig();
 
-		Properties prop = new Properties();
-		FileInputStream fis = new FileInputStream(System.getProperty("user.dir")
-				+ "\\src\\main\\java\\test\\project\\OpenCart\\resources\\data.properties");
-
-		prop.load(fis);
-		String browserName = prop.getProperty("browser");
-		url = prop.getProperty("url");
+//		Properties prop = new Properties();
+//		FileInputStream fis = new FileInputStream(System.getProperty("user.dir")
+//				+ "\\src\\main\\java\\test\\project\\OpenCart\\resources\\config.properties");
+//
+//		prop.load(fis);
+		String browserName = readConfig.getBrowser();
+//		String url = readConfig.getApplicationUrl();
 
 		if (browserName.equals("chrome")) {
 			WebDriverManager.chromedriver().setup();

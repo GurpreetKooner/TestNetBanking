@@ -11,6 +11,7 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
@@ -22,18 +23,13 @@ public class Base {
 	public ReadConfig readConfig;
 
 	public WebDriver initializeDriver() throws IOException {
-		
+
 		readConfig = new ReadConfig();
 
-//		Properties prop = new Properties();
-//		FileInputStream fis = new FileInputStream(System.getProperty("user.dir")
-//				+ "\\src\\main\\java\\test\\project\\OpenCart\\resources\\config.properties");
-//
-//		prop.load(fis);
 		String browserName = readConfig.getBrowser();
-//		String url = readConfig.getApplicationUrl();
 
 		if (browserName.equals("chrome")) {
+//			opt.addExtensions(new File("./Extensions/AdBlock.crx"));
 			WebDriverManager.chromedriver().setup();
 			driver = new ChromeDriver();
 		} else if (browserName.equals("edge")) {
@@ -42,6 +38,13 @@ public class Base {
 		} else if (browserName.equals("firefox")) {
 			WebDriverManager.firefoxdriver().setup();
 			driver = new FirefoxDriver();
+		} else if (browserName.equals("brave")) {
+			System.setProperty("webdriver.chrome.driver",
+					System.getProperty("user.dir") + "\\Drivers\\chromedriver.exe");
+			ChromeOptions opt = new ChromeOptions();
+			opt.setBinary("C:\\Program Files\\BraveSoftware\\Brave-Browser\\Application\\brave.exe");
+			driver = new ChromeDriver(opt);
+
 		}
 
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));

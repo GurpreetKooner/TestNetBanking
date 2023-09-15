@@ -1,6 +1,7 @@
 package testCases;
 
 import java.io.IOException;
+import java.sql.SQLException;
 
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
@@ -13,6 +14,7 @@ import pageObjects.Login;
 import pageObjects.NewCustomer;
 import pageObjects.PageNavigation;
 import resources.Base;
+import resources.DatabaseHandler;
 import resources.ReadConfig;
 import resources.ReadCustomerData;
 
@@ -20,10 +22,23 @@ public class TC_addNewCustomer_01 extends Base {
 
 	WebDriver driver;
 	ReadConfig config;
+	ReadCustomerData customerData;
+	DatabaseHandler db;
 
 	public void loginTest() {
 
 		driver.get(config.getApplicationUrl());
+
+//		try {
+//			Thread.sleep(7000);
+////			Set<String> handlesSet = driver.getWindowHandles();
+////			List<String> handles = new ArrayList<>(handlesSet);
+////			driver.switchTo().window(handles.get(1));
+//		    driver.close();
+//		} catch (InterruptedException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}	    
 
 		Login login = new Login(driver);
 		login.setUserId(config.getUserID());
@@ -34,6 +49,7 @@ public class TC_addNewCustomer_01 extends Base {
 			Assert.assertTrue(true);
 		} else {
 			Assert.assertTrue(false);
+			driver.close();
 		}
 	}
 
@@ -47,6 +63,14 @@ public class TC_addNewCustomer_01 extends Base {
 		}
 		config = readConfig;
 
+		customerData = new ReadCustomerData();
+		try {
+			db = new DatabaseHandler();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
 		loginTest();
 	}
 
@@ -55,10 +79,10 @@ public class TC_addNewCustomer_01 extends Base {
 			String pin, String phone, String email, String password) {
 
 		PageNavigation navigate = new PageNavigation(driver);
-		navigate.navigateToPage("New Customer");
+//		navigate.closeAd();
 
-		ReadCustomerData data = new ReadCustomerData();
-		System.out.println(data.getnewCustomerData());
+		navigate.navigateToPage("New Customer");
+//		navigate.closeAd();
 
 		NewCustomer customer = new NewCustomer(driver);
 		customer.setCustomerName(name);
@@ -72,10 +96,22 @@ public class TC_addNewCustomer_01 extends Base {
 		customer.setEmail(email);
 		customer.setPassword(password);
 		customer.clickSubmit();
-		
-		if(customer.customerRegistered()) {
+
+		if (customer.customerRegistered()) {
 			Assert.assertTrue(true);
-		}else {
+			int id = customer.getCustomerId();
+			try {
+				db.insertNewCustomer(id, name, gender, dob, address, city, state, pin, phone, email, password);
+				Thread.sleep(1000);
+
+			} catch (SQLException e) {
+				e.printStackTrace();
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		} else {
+			driver.switchTo().alert().accept();
 			Assert.assertTrue(false);
 		}
 
@@ -84,13 +120,17 @@ public class TC_addNewCustomer_01 extends Base {
 	@DataProvider
 	public Object[][] getNewCustomersData() {
 
-		ReadCustomerData customerData = new ReadCustomerData();
 		return customerData.getnewCustomerData();
 	}
-	
+
 	@AfterClass
-	public void Teardown() {
-		driver.close();
+	public void Teardown() throws SQLException {
+		
+		driver.quit();;
+
+//		db.con.close();
+//
+//		driver.close();
 	}
 
 }

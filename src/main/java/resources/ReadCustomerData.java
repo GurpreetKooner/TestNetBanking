@@ -31,7 +31,7 @@ public class ReadCustomerData {
 		XSSFSheet sheet = workbook.getSheet("newCustomers");
 
 		int numOfRows = sheet.getPhysicalNumberOfRows() - 1;
-		System.out.println(numOfRows);
+//		System.out.println(numOfRows);
 		Object[][] data = new Object[numOfRows][10];
 		Iterator<Row> row = sheet.rowIterator();
 		row.next();

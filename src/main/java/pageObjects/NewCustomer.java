@@ -4,7 +4,6 @@ import java.util.List;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
@@ -53,6 +52,9 @@ public class NewCustomer {
 	
 	@FindBy(xpath = "//p[text()='Customer Registered Successfully!!!']")
 	WebElement successfullReg;
+	
+	@FindBy(xpath = "//td[text()='Customer ID']/following-sibling::td")
+	WebElement customerId;
 
 	public void setCustomerName(String cName) {
 		customerName.sendKeys(cName);
@@ -99,11 +101,16 @@ public class NewCustomer {
 	}
 	
 	public void clickSubmit() {
-		submit.click();;
+		submit.click();
 	}
 	
 	public boolean customerRegistered() {
 		return successfullReg.isDisplayed();
+	}
+	
+	public int getCustomerId() {
+		String id = customerId.getText();
+		return Integer.parseInt(id);
 	}
 
 }

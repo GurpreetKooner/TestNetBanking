@@ -3,12 +3,15 @@
 <suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="testCases.TC_LoginTest_01">
+      <class name="testCases.TC_AddEditDeleteCustomer">
         <methods>
-          <include name="loginTest"/>
+          <include name="deleteCustomer" invocation-numbers="0"/>
+          <include name="Teardown"/>
+          <include name="addNewCustomerTest" invocation-numbers="0"/>
           <include name="initialize"/>
+          <include name="editCustomerInfo" invocation-numbers="0"/>
         </methods>
-      </class> <!-- testCases.TC_LoginTest_01 -->
+      </class> <!-- testCases.TC_AddEditDeleteCustomer -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

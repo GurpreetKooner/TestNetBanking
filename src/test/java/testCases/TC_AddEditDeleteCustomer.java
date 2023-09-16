@@ -8,6 +8,7 @@ import java.util.function.Consumer;
 
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -18,13 +19,19 @@ import pageObjects.PageNavigation;
 import resources.Base;
 import resources.DatabaseHandler;
 import resources.ReadConfig;
+import resources.ReadCustomerData;
 
-public class TC_editCustomerInfo extends Base {
+public class TC_AddEditDeleteCustomer extends Base {
+
 	private WebDriver driver;
 	private ReadConfig config;
+	private ReadCustomerData customerData;
 	private DatabaseHandler db;
+	private int customerID;
+	private CustomerInfo customer;
+	private PageNavigation navigate;
 
-	private void loginTest() {
+	private void login() {
 		driver.get(config.getApplicationUrl());
 		Login login = new Login(driver);
 		login.setUserId(config.getUserID());
@@ -41,27 +48,57 @@ public class TC_editCustomerInfo extends Base {
 			e.printStackTrace();
 		}
 		config = readConfig;
-		
+
+		customerData = new ReadCustomerData();
 		try {
 			db = new DatabaseHandler();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		loginTest();
+
+		login();
+		customer = new CustomerInfo(driver);
+		navigate = new PageNavigation(driver);
 	}
 
-	@Test(dataProvider = "editCustomersData")
+	@Test(priority = 0, dataProvider = "getNewCustomersData")
+	public void addNewCustomerTest(String name, String gender, String dob, String address, String city, String state,
+			String pin, String phone, String email, String password) {
+
+		navigate.navigateToPage("New Customer");
+
+		customer.setNewCustomerInfo(name, gender, dob, address, city, state, pin, phone, email, password);
+
+		if (customer.customerRegistered()) {
+			customerID = customer.getCustomerId();
+			try {
+				db.insertNewCustomer(customerID, name, gender, dob, address, city, state, pin, phone, email, password);
+				Thread.sleep(1000);
+
+			} catch (SQLException e) {
+				e.printStackTrace();
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+			Assert.assertTrue(true);
+
+		} else {
+			driver.switchTo().alert().accept();
+			Assert.assertTrue(false);
+		}
+
+	}
+
+	@Test(priority = 1, dataProvider = "editCustomersData")
 	public void editCustomerInfo(String id, String address, String city, String state, String pin, String phone,
 			String email) {
 
-		PageNavigation navigate = new PageNavigation(driver);
 		navigate.navigateToPage("Edit Customer");
 
-		CustomerInfo customer = new CustomerInfo(driver);
 		customer.enterCustomerId(id);
 		customer.clickSubmitEditId();
-		
+
 		List<String> columnNames = new ArrayList<>();
 		List<String> columnValues = new ArrayList<>();
 
@@ -74,12 +111,6 @@ public class TC_editCustomerInfo extends Base {
 
 		customer.clickSubmit();
 		driver.switchTo().alert().accept();	
-		
-//		for(int i=0; i<columnValues.size(); i++) {
-//			System.out.println(columnValues.get(i));
-//		}
-		
-		
 		try {
 			db.updateCustomerInfo(id, columnNames, columnValues);
 		} catch (SQLException e) {
@@ -98,14 +129,47 @@ public class TC_editCustomerInfo extends Base {
 		}
 	}
 
+	@Test(priority = 2, dataProvider = "deleteCustomersData")
+	public void deleteCustomer(String id) {
+
+		navigate.navigateToPage("Delete Customer");
+
+		customer.enterCustomerId(id);
+		customer.clickSubmitEditId();
+		try {
+			db.deleteCustomer(id);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+	}
+
+	@DataProvider
+	public Object[][] getNewCustomersData() {
+		return customerData.getnewCustomerData();
+	}
+
 	@DataProvider
 	public Object[][] editCustomersData() {
 
 		Object[][] data = new Object[1][7];
-		data[0][0] = "10810";
+		data[0][0] = String.valueOf(customerID);
 		data[0][2] = "Florida";
 		data[0][4] = "990011";
 		return data;
 	}
 
+	@DataProvider
+	public Object[][] deleteCustomersData() {
+
+		Object[][] data = new Object[1][1];
+		data[0][0] = String.valueOf(customerID);
+		return data;
+	}
+
+	@AfterClass
+	public void Teardown() throws SQLException {
+		driver.quit();
+	}
 }

@@ -3,8 +3,7 @@
 <suite name="Suite">
   <test name="Test">
     <classes>
-      <class name="testCases.TC_LoginTest_01"/>
-      <class name="testCases.TC_addNewCustomer_01"/>
+      <class name="testCases.TC_AddEditDeleteCustomer"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

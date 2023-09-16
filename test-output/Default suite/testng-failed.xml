@@ -3,13 +3,12 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="testCases.TC_addNewCustomer_01">
+      <class name="testCases.TC_editCustomerInfo">
         <methods>
-          <include name="addNewCustomerTest" invocation-numbers="0 1 2 3 4 5"/>
-          <include name="Teardown"/>
           <include name="initialize"/>
+          <include name="editCustomerInfo" invocation-numbers="0"/>
         </methods>
-      </class> <!-- testCases.TC_addNewCustomer_01 -->
+      </class> <!-- testCases.TC_editCustomerInfo -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

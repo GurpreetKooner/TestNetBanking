@@ -11,7 +11,7 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import pageObjects.Login;
-import pageObjects.NewCustomer;
+import pageObjects.CustomerInfo;
 import pageObjects.PageNavigation;
 import resources.Base;
 import resources.DatabaseHandler;
@@ -20,25 +20,14 @@ import resources.ReadCustomerData;
 
 public class TC_addNewCustomer_01 extends Base {
 
-	WebDriver driver;
-	ReadConfig config;
-	ReadCustomerData customerData;
-	DatabaseHandler db;
+	private WebDriver driver;
+	private ReadConfig config;
+	private ReadCustomerData customerData;
+	private DatabaseHandler db;
 
-	public void loginTest() {
+	private void loginTest() {
 
 		driver.get(config.getApplicationUrl());
-
-//		try {
-//			Thread.sleep(7000);
-////			Set<String> handlesSet = driver.getWindowHandles();
-////			List<String> handles = new ArrayList<>(handlesSet);
-////			driver.switchTo().window(handles.get(1));
-//		    driver.close();
-//		} catch (InterruptedException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}	    
 
 		Login login = new Login(driver);
 		login.setUserId(config.getUserID());
@@ -79,23 +68,25 @@ public class TC_addNewCustomer_01 extends Base {
 			String pin, String phone, String email, String password) {
 
 		PageNavigation navigate = new PageNavigation(driver);
-//		navigate.closeAd();
-
 		navigate.navigateToPage("New Customer");
-//		navigate.closeAd();
 
-		NewCustomer customer = new NewCustomer(driver);
-		customer.setCustomerName(name);
-		customer.setGender(gender);
-		customer.setDOB(dob);
-		customer.setAddress(address);
-		customer.setCity(city);
-		customer.setState(state);
-		customer.setPin(pin);
-		customer.setMobNumber(phone);
-		customer.setEmail(email);
-		customer.setPassword(password);
-		customer.clickSubmit();
+		CustomerInfo customer = new CustomerInfo(driver);
+
+//		customer.setCustomerName(name);
+//		customer.setGender(gender);
+//		customer.setDOB(dob);
+//		customer.setAddress(address);
+//		customer.setCity(city);
+//		customer.setState(state);
+//		customer.setPin(pin);
+//		customer.setMobNumber(phone);
+//		customer.setEmail(email);
+//		customer.setPassword(password);
+//		customer.clickSubmit();
+
+//		OR
+
+		customer.setNewCustomerInfo(name, gender, dob, address, city, state, pin, phone, email, password);
 
 		if (customer.customerRegistered()) {
 			Assert.assertTrue(true);
@@ -125,8 +116,8 @@ public class TC_addNewCustomer_01 extends Base {
 
 	@AfterClass
 	public void Teardown() throws SQLException {
-		
-		driver.quit();;
+
+		driver.quit();
 
 //		db.con.close();
 //

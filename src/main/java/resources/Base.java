@@ -29,9 +29,10 @@ public class Base {
 		String browserName = readConfig.getBrowser();
 
 		if (browserName.equals("chrome")) {
-//			opt.addExtensions(new File("./Extensions/AdBlock.crx"));
+			ChromeOptions opt = new ChromeOptions();
+			opt.addExtensions(new File("./Extensions/AdBlock.crx"));
 			WebDriverManager.chromedriver().setup();
-			driver = new ChromeDriver();
+			driver = new ChromeDriver(opt);
 		} else if (browserName.equals("edge")) {
 			WebDriverManager.edgedriver().setup();
 			driver = new EdgeDriver();
@@ -39,12 +40,12 @@ public class Base {
 			WebDriverManager.firefoxdriver().setup();
 			driver = new FirefoxDriver();
 		} else if (browserName.equals("brave")) {
-			System.setProperty("webdriver.chrome.driver",
-					System.getProperty("user.dir") + "\\Drivers\\chromedriver.exe");
+//			System.setProperty("webdriver.chrome.driver",
+//					System.getProperty("user.dir") + "\\Drivers\\chromedriver.exe");
+			WebDriverManager.chromedriver().setup();
 			ChromeOptions opt = new ChromeOptions();
 			opt.setBinary("C:\\Program Files\\BraveSoftware\\Brave-Browser\\Application\\brave.exe");
 			driver = new ChromeDriver(opt);
-
 		}
 
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));

@@ -23,7 +23,7 @@ import resources.ReadCustomerData;
 
 public class TC_AddEditDeleteCustomer extends Base {
 
-	private WebDriver driver;
+	public WebDriver driver;
 	private ReadConfig config;
 	private ReadCustomerData customerData;
 	private DatabaseHandler db;

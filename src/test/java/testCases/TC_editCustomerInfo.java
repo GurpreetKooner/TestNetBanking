@@ -20,7 +20,7 @@ import resources.DatabaseHandler;
 import resources.ReadConfig;
 
 public class TC_editCustomerInfo extends Base {
-	private WebDriver driver;
+	WebDriver driver;
 	private ReadConfig config;
 	private DatabaseHandler db;
 

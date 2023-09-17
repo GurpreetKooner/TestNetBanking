@@ -13,7 +13,7 @@ import resources.ReadConfig;
 
 public class TC_LoginTest_01 extends Base{
 	
-	WebDriver driver;
+	public WebDriver driver;
 	ReadConfig config;
 	
 	@BeforeTest

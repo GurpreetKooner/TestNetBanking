@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
+<testng-results ignored="0" total="4" passed="4" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-09-16T17:57:51 IST" name="Suite" finished-at="2023-09-16T17:58:07 IST" duration-ms="16667">
+  <suite started-at="2023-09-17T22:35:29 IST" name="Suite" finished-at="2023-09-17T22:35:55 IST" duration-ms="26128">
     <groups>
     </groups>
-    <test started-at="2023-09-16T17:57:51 IST" name="Test" finished-at="2023-09-16T17:58:07 IST" duration-ms="16667">
+    <test started-at="2023-09-17T22:35:29 IST" name="Test" finished-at="2023-09-17T22:35:55 IST" duration-ms="26128">
       <class name="testCases.TC_AddEditDeleteCustomer">
-        <test-method is-config="true" signature="initialize()[pri:0, instance:testCases.TC_AddEditDeleteCustomer@496bc455]" started-at="2023-09-16T17:57:51 IST" name="initialize" finished-at="2023-09-16T17:58:00 IST" duration-ms="9194" status="PASS">
+        <test-method is-config="true" signature="initialize()[pri:0, instance:testCases.TC_AddEditDeleteCustomer@db57326]" started-at="2023-09-17T22:35:29 IST" name="initialize" finished-at="2023-09-17T22:35:39 IST" duration-ms="10250" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initialize -->
-        <test-method signature="addNewCustomerTest(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:testCases.TC_AddEditDeleteCustomer@496bc455]" started-at="2023-09-16T17:58:00 IST" name="addNewCustomerTest" data-provider="getNewCustomersData" finished-at="2023-09-16T17:58:03 IST" duration-ms="2635" status="PASS">
+        <test-method signature="addNewCustomerTest(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:testCases.TC_AddEditDeleteCustomer@db57326]" started-at="2023-09-17T22:35:39 IST" name="addNewCustomerTest" data-provider="getNewCustomersData" finished-at="2023-09-17T22:35:43 IST" duration-ms="3621" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[Qaman]]>
+                <![CDATA[Sanam]]>
               </value>
             </param>
             <param index="1">
@@ -35,12 +35,12 @@
             </param>
             <param index="4">
               <value>
-                <![CDATA[New Dlhi]]>
+                <![CDATA[Jalandhar]]>
               </value>
             </param>
             <param index="5">
               <value>
-                <![CDATA[Delhi]]>
+                <![CDATA[Punjab]]>
               </value>
             </param>
             <param index="6">
@@ -50,28 +50,84 @@
             </param>
             <param index="7">
               <value>
-                <![CDATA[9376338880]]>
+                <![CDATA[9376332080]]>
               </value>
             </param>
             <param index="8">
               <value>
-                <![CDATA[qlalm@paakka.com]]>
+                <![CDATA[sanam@paakka.com]]>
               </value>
             </param>
             <param index="9">
               <value>
-                <![CDATA[qlalm@paakka.com]]>
+                <![CDATA[sanam@paakka.com]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- addNewCustomerTest -->
-        <test-method signature="editCustomerInfo(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:1, instance:testCases.TC_AddEditDeleteCustomer@496bc455]" started-at="2023-09-16T17:58:03 IST" name="editCustomerInfo" data-provider="editCustomersData" finished-at="2023-09-16T17:58:05 IST" duration-ms="2527" status="PASS">
+        <test-method signature="addNewCustomerTest(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:testCases.TC_AddEditDeleteCustomer@db57326]" started-at="2023-09-17T22:35:43 IST" name="addNewCustomerTest" data-provider="getNewCustomersData" finished-at="2023-09-17T22:35:48 IST" duration-ms="5372" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[85835]]>
+                <![CDATA[Mohit]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[male]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[36008]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[D 54 Nagar]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Inderapuram]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[Delhi]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[110094]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[7910002333]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[mohit@palma.com]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[mohit@palma.com]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- addNewCustomerTest -->
+        <test-method signature="editCustomerInfo(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:1, instance:testCases.TC_AddEditDeleteCustomer@db57326]" started-at="2023-09-17T22:35:48 IST" name="editCustomerInfo" data-provider="editCustomersData" finished-at="2023-09-17T22:35:51 IST" duration-ms="3327" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[60452]]>
               </value>
             </param>
             <param index="1">
@@ -100,18 +156,18 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- editCustomerInfo -->
-        <test-method signature="deleteCustomer(java.lang.String)[pri:2, instance:testCases.TC_AddEditDeleteCustomer@496bc455]" started-at="2023-09-16T17:58:05 IST" name="deleteCustomer" data-provider="deleteCustomersData" finished-at="2023-09-16T17:58:07 IST" duration-ms="1601" status="PASS">
+        <test-method signature="deleteCustomer(java.lang.String)[pri:2, instance:testCases.TC_AddEditDeleteCustomer@db57326]" started-at="2023-09-17T22:35:51 IST" name="deleteCustomer" data-provider="deleteCustomersData" finished-at="2023-09-17T22:35:54 IST" duration-ms="2879" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[10810]]>
+                <![CDATA[60452]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- deleteCustomer -->
-        <test-method is-config="true" signature="Teardown()[pri:0, instance:testCases.TC_AddEditDeleteCustomer@496bc455]" started-at="2023-09-16T17:58:07 IST" name="Teardown" finished-at="2023-09-16T17:58:07 IST" duration-ms="613" status="PASS">
+        <test-method is-config="true" signature="Teardown()[pri:0, instance:testCases.TC_AddEditDeleteCustomer@db57326]" started-at="2023-09-17T22:35:54 IST" name="Teardown" finished-at="2023-09-17T22:35:55 IST" duration-ms="560" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Teardown -->

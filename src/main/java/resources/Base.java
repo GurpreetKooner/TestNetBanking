@@ -30,7 +30,7 @@ public class Base {
 
 		if (browserName.equals("chrome")) {
 			ChromeOptions opt = new ChromeOptions();
-			opt.addExtensions(new File("./Extensions/AdBlock.crx"));
+			opt.addExtensions(new File("./extensions/AdBlock.crx"));
 			WebDriverManager.chromedriver().setup();
 			driver = new ChromeDriver(opt);
 		} else if (browserName.equals("edge")) {
@@ -41,7 +41,7 @@ public class Base {
 			driver = new FirefoxDriver();
 		} else if (browserName.equals("brave")) {
 //			System.setProperty("webdriver.chrome.driver",
-//					System.getProperty("user.dir") + "\\Drivers\\chromedriver.exe");
+//					System.getProperty("user.dir") + "\\drivers\\chromedriver.exe");
 			WebDriverManager.chromedriver().setup();
 			ChromeOptions opt = new ChromeOptions();
 			opt.setBinary("C:\\Program Files\\BraveSoftware\\Brave-Browser\\Application\\brave.exe");
@@ -58,7 +58,9 @@ public class Base {
 
 		TakesScreenshot ts = (TakesScreenshot) driver;
 		File source = ts.getScreenshotAs(OutputType.FILE);
-		String destinationFile = System.getProperty("user.dir") + "\\reports\\" + testCaseName + ".png";
+		long timestamp = System.currentTimeMillis();
+		String destinationFile = System.getProperty("user.dir") + "\\reports\\" + testCaseName + "_"
+				+ String.valueOf(timestamp) + ".png";
 		FileUtils.copyFile(source, new File(destinationFile));
 		return destinationFile;
 

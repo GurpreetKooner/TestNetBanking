@@ -25,7 +25,7 @@
       <span class="top-banner-title-font">Test results</span>
       <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 3 failed tests</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -39,7 +39,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" panel-name="suite-Suite" class="navigator-link">
-              <span class="suite-name border-passed">Suite</span>
+              <span class="suite-name border-failed">Suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -92,7 +92,31 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">4 methods,   4 passed</span>
+                    <span class="method-stats">4 methods, 3 failed,   1 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-Suite" class="hide-methods failed suite-Suite"> (hide)</a> <!-- hide-methods failed suite-Suite -->
+                      <a href="#" panel-name="suite-Suite" class="show-methods failed suite-Suite"> (show)</a> <!-- show-methods failed suite-Suite -->
+                    </span>
+                    <div class="method-list-content failed suite-Suite">
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="testCases.TC_AddEditDeleteCustomer" class="method navigator-link" hash-for-method="addNewCustomerTest">addNewCustomerTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="testCases.TC_AddEditDeleteCustomer" class="method navigator-link" hash-for-method="addNewCustomerTest(Sanam, female, 17-07-1999, A 47 Mayr Vihar, Jalandhar, Punjab, 132091, 9376332080, sanam@paakka.com,...)">addNewCustomerTest(Sanam, female, 17-07-1999, A 47 Mayr Vihar, Jalandhar, Punjab, 132091, 9376332080, sanam@paakka.com,...)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="testCases.TC_AddEditDeleteCustomer" class="method navigator-link" hash-for-method="editCustomerInfo">editCustomerInfo</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-Suite -->
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -103,22 +127,7 @@
                     <div class="method-list-content passed suite-Suite">
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="testCases.TC_AddEditDeleteCustomer" class="method navigator-link" hash-for-method="addNewCustomerTest(Mohit, male, 36008, D 54 Nagar, Inderapuram, Delhi, 110094, 7910002333, mohit@palma.com, mohit@palma...)">addNewCustomerTest(Mohit, male, 36008, D 54 Nagar, Inderapuram, Delhi, 110094, 7910002333, mohit@palma.com, mohit@palma...)</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="testCases.TC_AddEditDeleteCustomer" class="method navigator-link" hash-for-method="addNewCustomerTest(Sanam, female, 17-07-1999, A 47 Mayr Vihar, Jalandhar, Punjab, 132091, 9376332080, sanam@paakka.com,...)">addNewCustomerTest(Sanam, female, 17-07-1999, A 47 Mayr Vihar, Jalandhar, Punjab, 132091, 9376332080, sanam@paakka.com,...)</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="testCases.TC_AddEditDeleteCustomer" class="method navigator-link" hash-for-method="deleteCustomer(60452)">deleteCustomer(60452)</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="testCases.TC_AddEditDeleteCustomer" class="method navigator-link" hash-for-method="editCustomerInfo(60452, null, Florida, null, 990011, null, null)">editCustomerInfo(60452, null, Florida, null, 990011, null, null)</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Suite" title="testCases.TC_AddEditDeleteCustomer" class="method navigator-link" hash-for-method="deleteCustomer(0)">deleteCustomer(0)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Suite -->
@@ -133,18 +142,39 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Suite" class="panel Suite">
-          <div class="suite-Suite-class-passed">
+          <div class="suite-Suite-class-failed">
             <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
+              <img src="failed.png"/>
               <span class="class-name">testCases.TC_AddEditDeleteCustomer</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="addNewCustomerTest(Mohit, male, 36008, D 54 Nagar, Inderapuram, Delhi, 110094, 7910002333, mohit@palma.com, mohit@palma...)">
-                  </a> <!-- addNewCustomerTest(Mohit, male, 36008, D 54 Nagar, Inderapuram, Delhi, 110094, 7910002333, mohit@palma.com, mohit@palma...) -->
+                  <a name="addNewCustomerTest">
+                  </a> <!-- addNewCustomerTest -->
                   <span class="method-name">addNewCustomerTest</span>
-                  <span class="parameters">(Mohit,male,36008,D 54 Nagar,Inderapuram,Delhi,110094,7910002333,mohit@palma.com,mohit@palma.com)</span>
+                  <div class="stack-trace">org.openqa.selenium.UnhandledAlertException: unexpected alert open: {Alert text : Email Address Already Exist !!}
+  (Session info: chrome=117.0.5938.88): Email Address Already Exist !!
+Build info: version: &apos;4.11.0&apos;, revision: &apos;040bc5406b&apos;
+System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.7&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [07f96d8fa69156541d231cc3383fe444, screenshot {}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 117.0.5938.88, chrome: {chromedriverVersion: 117.0.5938.88 (be6afae47212..., userDataDir: C:\Users\GURPRE~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:55023}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:55023/devtoo..., se:cdpVersion: 117.0.5938.88, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 07f96d8fa69156541d231cc3383fe444
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:131)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:52)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:196)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:171)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:591)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:595)
+	at org.openqa.selenium.remote.RemoteWebDriver.getScreenshotAs(RemoteWebDriver.java:321)
+	at resources.Base.getScreenShotPath(Base.java:60)
+	at testNgListeners.Listeners.onTestFailure(Listeners.java:56)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 24 stack frames
+</div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
@@ -153,22 +183,77 @@
                   </a> <!-- addNewCustomerTest(Sanam, female, 17-07-1999, A 47 Mayr Vihar, Jalandhar, Punjab, 132091, 9376332080, sanam@paakka.com,...) -->
                   <span class="method-name">addNewCustomerTest</span>
                   <span class="parameters">(Sanam,female,17-07-1999,A 47 Mayr Vihar,Jalandhar,Punjab,132091,9376332080,sanam@paakka.com,sanam@paakka.com)</span>
+                  <div class="stack-trace">org.openqa.selenium.UnhandledAlertException: unexpected alert open: {Alert text : Email Address Already Exist !!}
+  (Session info: chrome=117.0.5938.88): Email Address Already Exist !!
+Build info: version: &apos;4.11.0&apos;, revision: &apos;040bc5406b&apos;
+System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.7&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [07f96d8fa69156541d231cc3383fe444, findElement {using=xpath, value=//p[text()=&apos;Customer Registered Successfully!!!&apos;]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 117.0.5938.88, chrome: {chromedriverVersion: 117.0.5938.88 (be6afae47212..., userDataDir: C:\Users\GURPRE~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:55023}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:55023/devtoo..., se:cdpVersion: 117.0.5938.88, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 07f96d8fa69156541d231cc3383fe444
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:131)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:52)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:196)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:171)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:349)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at jdk.proxy2/jdk.proxy2.$Proxy34.isDisplayed(Unknown Source)
+	at pageObjects.CustomerInfo.customerRegistered(CustomerInfo.java:135)
+	at testCases.TC_AddEditDeleteCustomer.addNewCustomerTest(TC_AddEditDeleteCustomer.java:79)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 27 stack frames
+</div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="deleteCustomer(60452)">
-                  </a> <!-- deleteCustomer(60452) -->
-                  <span class="method-name">deleteCustomer</span>
-                  <span class="parameters">(60452)</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="editCustomerInfo(60452, null, Florida, null, 990011, null, null)">
-                  </a> <!-- editCustomerInfo(60452, null, Florida, null, 990011, null, null) -->
+                  <a name="editCustomerInfo">
+                  </a> <!-- editCustomerInfo -->
                   <span class="method-name">editCustomerInfo</span>
-                  <span class="parameters">(60452,null,Florida,null,990011,null,null)</span>
+                  <div class="stack-trace">org.openqa.selenium.UnhandledAlertException: unexpected alert open: {Alert text : You are not authorize to edit this customer!!}
+  (Session info: chrome=117.0.5938.88): You are not authorize to edit this customer!!
+Build info: version: &apos;4.11.0&apos;, revision: &apos;040bc5406b&apos;
+System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.7&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [07f96d8fa69156541d231cc3383fe444, screenshot {}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 117.0.5938.88, chrome: {chromedriverVersion: 117.0.5938.88 (be6afae47212..., userDataDir: C:\Users\GURPRE~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:55023}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:55023/devtoo..., se:cdpVersion: 117.0.5938.88, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 07f96d8fa69156541d231cc3383fe444
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:131)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:52)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:196)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:171)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:591)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:595)
+	at org.openqa.selenium.remote.RemoteWebDriver.getScreenshotAs(RemoteWebDriver.java:321)
+	at resources.Base.getScreenShotPath(Base.java:60)
+	at testNgListeners.Listeners.onTestFailure(Listeners.java:56)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 24 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Suite-class-failed -->
+          <div class="suite-Suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">testCases.TC_AddEditDeleteCustomer</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="deleteCustomer(0)">
+                  </a> <!-- deleteCustomer(0) -->
+                  <span class="method-name">deleteCustomer</span>
+                  <span class="parameters">(0)</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -232,24 +317,24 @@ data.addRows(4);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'addNewCustomerTest')
 data.setCell(0, 2, 'testCases.TC_AddEditDeleteCustomer')
-data.setCell(0, 3, 5372);
+data.setCell(0, 3, 3882);
 data.setCell(1, 0, 1)
 data.setCell(1, 1, 'addNewCustomerTest')
 data.setCell(1, 2, 'testCases.TC_AddEditDeleteCustomer')
-data.setCell(1, 3, 3621);
+data.setCell(1, 3, 1929);
 data.setCell(2, 0, 2)
 data.setCell(2, 1, 'editCustomerInfo')
 data.setCell(2, 2, 'testCases.TC_AddEditDeleteCustomer')
-data.setCell(2, 3, 3327);
+data.setCell(2, 3, 1453);
 data.setCell(3, 0, 3)
 data.setCell(3, 1, 'deleteCustomer')
 data.setCell(3, 2, 'testCases.TC_AddEditDeleteCustomer')
-data.setCell(3, 3, 2879);
+data.setCell(3, 3, 1135);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 15 seconds</span>
+              <span class="suite-total-time">Total running time: 8 seconds</span>
               <div id="times-div-Suite">
               </div> <!-- times-div-Suite -->
             </div> <!-- times-div -->
@@ -281,24 +366,30 @@ return data;
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">addNewCustomerTest</span>
+                <span class="method-start">9714 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
                 <span class="method-name">addNewCustomerTest(Sanam, female, 17-07-1999, A 47 Mayr Vihar, Jalandhar, Punjab, 132091, 9376332080, sanam@paakka.com,...)</span>
-                <span class="method-start">10326 ms</span>
+                <span class="method-start">9780 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
-                <span class="method-name">addNewCustomerTest(Mohit, male, 36008, D 54 Nagar, Inderapuram, Delhi, 110094, 7910002333, mohit@palma.com, mohit@palma...)</span>
-                <span class="method-start">13952 ms</span>
+                <img src="failed.png">
+                </img>
+                <span class="method-name">editCustomerInfo</span>
+                <span class="method-start">13899 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
-                <span class="method-name">editCustomerInfo(60452, null, Florida, null, 990011, null, null)</span>
-                <span class="method-start">19328 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">deleteCustomer(60452)</span>
-                <span class="method-start">22660 ms</span>
+                <span class="method-name">deleteCustomer(0)</span>
+                <span class="method-start">16034 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">Teardown</span>
-                <span class="method-start">25540 ms</span>
+                <span class="method-start">17170 ms</span>
               </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

@@ -3,6 +3,8 @@ package testCases;
 import java.io.IOException;
 import java.sql.SQLException;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
@@ -24,12 +26,14 @@ public class TC_addNewCustomer_01 extends Base {
 	private ReadConfig config;
 	private ReadCustomerData customerData;
 	private DatabaseHandler db;
+	public static Logger log = LogManager.getLogger(Base.class.getName());
+
 
 	private void loginTest() {
 
 		driver.get(config.getApplicationUrl());
 
-		Login login = new Login(driver);
+		Login login = new Login(driver, log);
 		login.setUserId(config.getUserID());
 		login.setPassword(config.getPassword());
 		login.clickSubmit();
@@ -67,10 +71,10 @@ public class TC_addNewCustomer_01 extends Base {
 	public void addNewCustomerTest(String name, String gender, String dob, String address, String city, String state,
 			String pin, String phone, String email, String password) {
 
-		PageNavigation navigate = new PageNavigation(driver);
+		PageNavigation navigate = new PageNavigation(driver, log);
 		navigate.navigateToPage("New Customer");
 
-		CustomerInfo customer = new CustomerInfo(driver);
+		CustomerInfo customer = new CustomerInfo(driver, log);
 
 //		customer.setCustomerName(name);
 //		customer.setGender(gender);

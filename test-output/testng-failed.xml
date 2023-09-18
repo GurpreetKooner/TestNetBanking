@@ -9,7 +9,7 @@
       <class name="testCases.TC_AddEditDeleteCustomer">
         <methods>
           <include name="Teardown"/>
-          <include name="addNewCustomerTest" invocation-numbers="0"/>
+          <include name="addNewCustomerTest" invocation-numbers="0 1"/>
           <include name="initialize"/>
           <include name="editCustomerInfo" invocation-numbers="0"/>
         </methods>

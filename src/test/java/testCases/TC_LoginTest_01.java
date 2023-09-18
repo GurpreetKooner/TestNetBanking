@@ -2,6 +2,8 @@ package testCases;
 
 import java.io.IOException;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.BeforeTest;
@@ -15,6 +17,8 @@ public class TC_LoginTest_01 extends Base{
 	
 	public WebDriver driver;
 	ReadConfig config;
+	public static Logger log = LogManager.getLogger(Base.class.getName());
+
 	
 	@BeforeTest
 	public void initialize() throws IOException {
@@ -33,7 +37,7 @@ public class TC_LoginTest_01 extends Base{
 		
 		driver.get(config.getApplicationUrl());
 
-		Login login = new Login(driver);
+		Login login = new Login(driver, log);
 		login.setUserId(config.getUserID());
 		login.setPassword(config.getPassword());
 		login.clickSubmit();

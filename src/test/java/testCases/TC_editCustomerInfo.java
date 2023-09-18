@@ -6,8 +6,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
-import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -23,10 +24,12 @@ public class TC_editCustomerInfo extends Base {
 	WebDriver driver;
 	private ReadConfig config;
 	private DatabaseHandler db;
+	public static Logger log = LogManager.getLogger(Base.class.getName());
+
 
 	private void loginTest() {
 		driver.get(config.getApplicationUrl());
-		Login login = new Login(driver);
+		Login login = new Login(driver, log);
 		login.setUserId(config.getUserID());
 		login.setPassword(config.getPassword());
 		login.clickSubmit();
@@ -55,10 +58,10 @@ public class TC_editCustomerInfo extends Base {
 	public void editCustomerInfo(String id, String address, String city, String state, String pin, String phone,
 			String email) {
 
-		PageNavigation navigate = new PageNavigation(driver);
+		PageNavigation navigate = new PageNavigation(driver, log);
 		navigate.navigateToPage("Edit Customer");
 
-		CustomerInfo customer = new CustomerInfo(driver);
+		CustomerInfo customer = new CustomerInfo(driver, log);
 		customer.enterCustomerId(id);
 		customer.clickSubmitEditId();
 		

@@ -6,6 +6,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
@@ -22,6 +24,8 @@ import resources.ReadConfig;
 import resources.ReadCustomerData;
 
 public class TC_AddEditDeleteCustomer extends Base {
+	
+	public static Logger log = LogManager.getLogger(Base.class.getName());
 
 	public WebDriver driver;
 	private ReadConfig config;
@@ -33,7 +37,7 @@ public class TC_AddEditDeleteCustomer extends Base {
 
 	private void login() {
 		driver.get(config.getApplicationUrl());
-		Login login = new Login(driver);
+		Login login = new Login(driver, log);
 		login.setUserId(config.getUserID());
 		login.setPassword(config.getPassword());
 		login.clickSubmit();
@@ -43,6 +47,7 @@ public class TC_AddEditDeleteCustomer extends Base {
 	public void initialize(){
 		try {
 			driver = initializeDriver();
+			log.info("Driver is Initialized");
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -58,8 +63,9 @@ public class TC_AddEditDeleteCustomer extends Base {
 		}
 
 		login();
-		customer = new CustomerInfo(driver);
-		navigate = new PageNavigation(driver);
+		
+		customer = new CustomerInfo(driver, log);
+		navigate = new PageNavigation(driver, log);
 	}
 
 	@Test(priority = 0, dataProvider = "getNewCustomersData")

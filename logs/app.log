@@ -1,0 +1,34 @@
+2023-09-18 23:49:29 [main] INFO  resources.Base - Driver is Initialized
+2023-09-18 23:49:35 [main] INFO  resources.Base - Enter Login User ID: mngr528170
+2023-09-18 23:49:35 [main] INFO  resources.Base - Enter Login Password: bUzEmYm9(
+2023-09-18 23:49:36 [main] INFO  resources.Base - Click Login Submit
+2023-09-18 23:49:37 [main] INFO  resources.Base - Navigate to page: New Customer
+2023-09-18 23:49:37 [main] INFO  resources.Base - Enter Customer Name: Sanam
+2023-09-18 23:49:37 [main] INFO  resources.Base - Set gender to female
+2023-09-18 23:49:37 [main] INFO  resources.Base - Enter Customer DOB: 17-07-1999
+2023-09-18 23:49:37 [main] INFO  resources.Base - Enter Customer Address: A 47 Mayr Vihar
+2023-09-18 23:49:37 [main] INFO  resources.Base - Enter Customer City: Jalandhar
+2023-09-18 23:49:37 [main] INFO  resources.Base - Enter Customer State: Punjab
+2023-09-18 23:49:38 [main] INFO  resources.Base - Enter Customer Pincode: 132091
+2023-09-18 23:49:38 [main] INFO  resources.Base - Enter Customer Phone number: 9376332080
+2023-09-18 23:49:38 [main] INFO  resources.Base - Enter Customer Email: sanam@paakka.com
+2023-09-18 23:49:38 [main] INFO  resources.Base - Enter Customer Password: sanam@paakka.com
+2023-09-18 23:49:38 [main] INFO  resources.Base - Click Submit
+2023-09-18 23:49:39 [main] INFO  resources.Base - Navigate to page: New Customer
+2023-09-18 23:49:39 [main] INFO  resources.Base - Enter Customer Name: Mohit
+2023-09-18 23:49:39 [main] INFO  resources.Base - Set gender to male
+2023-09-18 23:49:39 [main] INFO  resources.Base - Enter Customer DOB: 36008
+2023-09-18 23:49:39 [main] INFO  resources.Base - Enter Customer Address: D 54 Nagar
+2023-09-18 23:49:39 [main] INFO  resources.Base - Enter Customer City: Inderapuram
+2023-09-18 23:49:39 [main] INFO  resources.Base - Enter Customer State: Delhi
+2023-09-18 23:49:39 [main] INFO  resources.Base - Enter Customer Pincode: 110094
+2023-09-18 23:49:40 [main] INFO  resources.Base - Enter Customer Phone number: 7910002333
+2023-09-18 23:49:40 [main] INFO  resources.Base - Enter Customer Email: mohit@palma.com
+2023-09-18 23:49:40 [main] INFO  resources.Base - Enter Customer Password: mohit@palma.com
+2023-09-18 23:49:40 [main] INFO  resources.Base - Click Submit
+2023-09-18 23:49:41 [main] INFO  resources.Base - Navigate to page: Edit Customer
+2023-09-18 23:49:41 [main] INFO  resources.Base - Enter Customer Id to edit:0
+2023-09-18 23:49:42 [main] INFO  resources.Base - Click Submit
+2023-09-18 23:49:44 [main] INFO  resources.Base - Navigate to page: Delete Customer
+2023-09-18 23:49:44 [main] INFO  resources.Base - Enter Customer Id to edit:0
+2023-09-18 23:49:44 [main] INFO  resources.Base - Click Submit
